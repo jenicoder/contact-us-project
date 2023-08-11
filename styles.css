@@ -1,0 +1,114 @@
+body {
+  font-family: sans-serif;
+  background-color: rgb(216, 232, 255);
+}
+
+h1 {
+  text-align: center;
+  margin: 2rem;
+}
+
+form {
+  width: 40rem;
+  margin: auto;
+  background-color: rgb(218, 230, 246);
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+}
+
+/* 본격적 스타일링 */
+/* section들 사이에 공백넣기 */
+section {
+  margin-bottom: 1rem;
+}
+
+/* 리스트 꾸미기 */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* color: ===; */
+}
+
+/* 이 페이지의 모든 label선택하기 */
+label {
+  color: rgb(105, 122, 154);
+  display: block;
+  margin: 0.5rem 0;
+}
+
+input,
+textarea,
+select {
+  /* 폰트가 inherit인것은 위에 부모요소에서 설정한 폰트를 상속해서 쓴다는 말 */
+  font: inherit;
+  padding: 0.5rem;
+  border: 1px solid rgb(152, 159, 184);
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  /* width를 100퍼로 해놔서 가로로 꽉차기때문애 border-box로 설정해주면 됨 */
+  box-sizing: border-box;
+}
+
+/* 크기조절 비활성화하기 */
+textarea {
+  resize: none;
+}
+
+/* 입력창 누르면 집중할수있게 입력창에 색 입히기 */
+input:focus,
+textarea:focus {
+  background-color: rgb(215, 219, 228);
+}
+
+button {
+  font: inherit;
+  border: 1px solid rgb(152, 159, 184);
+  padding: 0.5rem 1.5rem;
+  border-radius: 4px;
+  /* 커서가 버튼위에머물면 손모양으로 바뀌는방법 */
+  cursor: pointer;
+}
+
+#form-actions {
+  text-align: right;
+}
+
+.btn-filled {
+  background-color: rgb(152, 159, 184);
+  color: white;
+}
+
+.btn-empty {
+  background-color: transparent;
+  color: rgb(51, 67, 100);
+}
+
+.btn-filled:hover {
+  background-color: rgb(194, 197, 207);
+  border-color: rgb(194, 197, 207);
+}
+
+.btn-empty:hover {
+  background-color: rgb(208, 215, 230);
+}
+
+/* 중간 */
+
+.inline-control {
+  /* block요소여도 display:flex면 동일선상으로 만들어준다 */
+  display: flex;
+}
+
+/* 선택동그라미랑 레이블 나란히 놓기 */
+.inline-control label {
+  margin: 0;
+  margin-left: 0.5rem;
+}
+
+/* 선택할수있는 동그라미 사이즈 바꾸기 */
+.inline-control input {
+  width: auto;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact us Form Project</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- 제목 써놓는 곳 -->
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+
+    <!-- form 쓰는곳 -->
+    <main>
+      <!-- form을 만들땐 form 태그를 써야함 -->
+      <!-- action은 이 양식이 제출될 url or form이 제출될 url 경로
+      method는 "GET" or "POST"로 설정된다 -->
+      <form action="/challenge" method="GET">
+        <section>
+          <h2>How can we help you?</h2>
+          <ul>
+            <li>
+              <label for="username">Your Name</label>
+              <!-- 마지막에있는 required는 이 요소는 필수라는 뜻이: 사용자는 무조건 이 질문에 답해야함 -->
+              <input type="text" id="username" name="username" required />
+            </li>
+            <li>
+              <label for="email">Your E-mail Address</label>
+              <input type="email" id="email" name="email" required />
+            </li>
+            <li>
+              <label for="phone">Your Phone Number</label>
+              <!-- minlegth="5"는 입력값의 숫자가 5자리 미만이면 무효가 되는것이다 -->
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                required
+                minlength="5"
+              />
+            </li>
+            <li>
+              <label for="message">Your Message</label>
+              <!-- textarea는 긴 문장을 쓸때 적합함 -->
+              <!-- 사용자가 너무 긴 메세지는 입력할수 없도록 maxlength도 정할수있다 -->
+              <textarea
+                id="message"
+                name="message"
+                required
+                minlength="10"
+                maxlength="200"
+                rows="7"
+              ></textarea>
+            </li>
+          </ul>
+        </section>
+        <!-- 옵션 선택하는 부분 -->
+        <section>
+          <label for="channel">How did you find us?</label>
+          <select name="channel" id="channel">
+            <option value="search">Web Search</option>
+            <option value="word-of-mouth">Word of Mouth</option>
+            <option value="other">other</option>
+          </select>
+        </section>
+        <!-- 멀티플 초이스 만들기 -->
+        <section>
+          <h2>How should we reply?</h2>
+          <ul>
+            <li class="inline-control">
+              <input
+                type="radio"
+                name="reply"
+                id="reply-phone"
+                value="phone"
+                required
+              />
+              <label for="reply-phone">Call me</label>
+            </li>
+            <li class="inline-control">
+              <input
+                type="radio"
+                name="reply"
+                id="reply-email"
+                value="email"
+                required
+              />
+              <label for="reply-email">Send me an email</label>
+            </li>
+            <li class="inline-control">
+              <input
+                type="radio"
+                name="reply"
+                id="reply-none"
+                value="none"
+                required
+              />
+              <label for="reply-none">Don't reply</label>
+            </li>
+          </ul>
+        </section>
+        <!-- 체크박스 만들기 -->
+        <section class="inline-control">
+          <input
+            type="checkbox"
+            name="accept-terms"
+            id="accept-terms"
+            required
+          />
+          <label for="accept-terms">Accept Terms</label>
+        </section>
+        <!-- clear, submit 버튼 만들기 -->
+        <section id="form-actions">
+          <button type="reset" class="btn-empty">Clear</button>
+          <!-- button태그의 type디폴트는 submit이여서 굳이 type="submit"안해도되긴함 -->
+          <button type="submit" class="btn-filled">Button</button>
+        </section>
+      </form>
+    </main>
+  </body>
+</html>
